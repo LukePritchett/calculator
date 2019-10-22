@@ -42,3 +42,10 @@ body {
     font-size: 1.8em;
     margin-top: 10px;
 }
+
+#buttons {
+    flex-grow: 1;
+    display: grid;
+    grid-template: auto / repeat(4, 1fr);
+    grid-gap: 2px;    
+}
