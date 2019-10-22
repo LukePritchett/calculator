@@ -22,3 +22,12 @@ body {
     display: flex;
     flex-direction: column;
 }
+
+#display {
+    padding-right: 5px;
+    text-align: end;
+    flex-basis: 30%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
