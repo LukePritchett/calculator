@@ -31,3 +31,14 @@ body {
     justify-content: center;
     flex-direction: column;
 }
+
+#previous {
+    color: #707070;
+    font-size: 0.6em;
+    min-height: 1.1em;
+}
+
+#current {
+    font-size: 1.8em;
+    margin-top: 10px;
+}
