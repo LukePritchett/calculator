@@ -30,6 +30,7 @@ body {
     display: flex;
     justify-content: center;
     flex-direction: column;
+    background-color: rgba(0,0,0,0.75);
 }
 
 #previous {
@@ -43,9 +44,15 @@ body {
     margin-top: 10px;
 }
 
-#buttons {
+#calculator-grid {
     flex-grow: 1;
     display: grid;
     grid-template: auto / repeat(4, 1fr);
-    grid-gap: 2px;    
+    grid-gap: 2px; 
+}
+
+#calculator-grid > button {
+    cursor: pointer;
+    outline: none;
+    background-color: rgba(255,255,255,0.75); 
 }
