@@ -12,8 +12,8 @@
     <div id = 'container'>
         <div id = 'calculator'>
             <div id = 'display'>
-                <div id = 'previous'></div>
-                <div id = 'current'></div>
+                <div data-previous id = 'previous'></div>
+                <div data-current id = 'current'></div>
             </div>
             <div id = 'calculator-grid'>
                 <button data-operation class="button" id="percentage"> % </button>
@@ -21,8 +21,8 @@
                 <button data-operation class="button" id="square"> x<sup id="twoSquare">2</sup> </button>
                 <button data-operation class="button" id="fraction"><span id="oneFraction">⅟</span><span>x</span></button>
 
-                <button class="button" id="clear"> CE </button>
-                <button class="button" id="clearAll"> C </button>
+                <button data-clear class="button" id="clear"> CE </button>
+                <button data-clearAll class="button" id="clearAll"> C </button>
                 <button data-operation class="button" id="factorial"> x! </button>
                 <button data-operation class="button operator" id="divide"> ÷ </button>
 
