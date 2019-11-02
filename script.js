@@ -1,15 +1,7 @@
-function addition(x, y) {   
-    return x + y;
-}
-
-function subtraction(x, y) {
-    return x - y;
-}
-
-function multiplication(x, y) {
-    return x * y;
-}
-
-function division(x, y) {
-    return x / y;
-}
+const numberButtons = document.querySelectorAll('[data-number]')
+const operationButtons = document.querySelectorAll('[data-operation]')
+const equalsButton = document.quertySelector('[data-equals]')
+const clearButton = document.quertySelector('[data-clear]')
+const clearAllButton = document.quertySelector('[data-clearAll]')
+const previousTextElement = document.quertySelector('[data-previous]')
+const currentTextElement = document.quertySelector('[data-current]')
