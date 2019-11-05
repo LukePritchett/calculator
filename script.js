@@ -27,6 +27,14 @@ class Calculator {
         this.currentOperand = (1/this.currentOperand).toString()
     }
 
+    reverseSign() {
+        if (this.currentOperand < 0) {
+            this.currentOperand = Math.abs(this.currentOperand) 
+        } else {
+            this.currentOperand = Math.abs(this.currentOperand) * -1
+        }
+    }
+
     clear() {
         this.currentOperand = ''
         this.previousOperand = ''
@@ -122,6 +130,7 @@ const percentageButton = document.querySelector('[data-percentage]')
 const squareRootButton = document.querySelector('[data-square-root]')
 const squaredButton = document.querySelector('[data-squared]')
 const fractionButton = document.querySelector('[data-fraction]')
+const reverseSignButton = document.querySelector('[data-reverse-sign]')
 
 const previousOperandTextElement = document.querySelector('[data-previous-operand]')
 const currentOperandTextElement = document.querySelector('[data-current-operand]')
@@ -183,5 +192,10 @@ squaredButton.addEventListener('click', button => {
 
 fractionButton.addEventListener('click', button => {
     calculator.fraction()
+    calculator.updateDisplay()
+})
+
+reverseSignButton.addEventListener('click',button => {
+    calculator.reverseSign()
     calculator.updateDisplay()
 })
