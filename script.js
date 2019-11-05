@@ -6,6 +6,26 @@ class Calculator {
         this.clear()
     }
 
+    percentage(currentOperand) {
+        if (currentOperand === NaN) return
+        this.currentOperand = (this.currentOperand / 100).toString()
+        
+    }
+
+    squareRoot() {
+        if (this.currentOperand == NaN) return 
+        this.currentOperand = Math.sqrt(this.currentOperand)
+        
+    }
+
+    squared() {
+        if (this.currentOperand === NaN) return
+        this.currentOperand = Math.pow(this.currentOperand, 2)
+    }
+
+    fraction() {
+        this.currentOperand = (1/this.currentOperand).toString()
+    }
 
     clear() {
         this.currentOperand = ''
@@ -98,6 +118,11 @@ const operationButtons = document.querySelectorAll('[data-operation]')
 const equalsButton = document.querySelector('[data-equals]')
 const deleteButton = document.querySelector('[data-delete]')
 const allClearButton = document.querySelector('[data-all-clear]')
+const percentageButton = document.querySelector('[data-percentage]')
+const squareRootButton = document.querySelector('[data-square-root]')
+const squaredButton = document.querySelector('[data-squared]')
+const fractionButton = document.querySelector('[data-fraction]')
+
 const previousOperandTextElement = document.querySelector('[data-previous-operand]')
 const currentOperandTextElement = document.querySelector('[data-current-operand]')
 
@@ -138,5 +163,25 @@ allClearButton.addEventListener('click', button => {
 
 deleteButton.addEventListener('click', button => {
     calculator.delete()
+    calculator.updateDisplay()
+})
+
+percentageButton.addEventListener('click', button => {
+    calculator.percentage()
+    calculator.updateDisplay()
+})
+
+squareRootButton.addEventListener('click', button => {
+    calculator.squareRoot()
+    calculator.updateDisplay()
+})
+
+squaredButton.addEventListener('click', button => {
+    calculator.squared()
+    calculator.updateDisplay()
+})
+
+fractionButton.addEventListener('click', button => {
+    calculator.fraction()
     calculator.updateDisplay()
 })
