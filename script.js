@@ -6,30 +6,44 @@ class Calculator {
         this.clear()
     }
 
-    percentage(currentOperand) {
-        if (currentOperand === NaN) return
+    percentage() {
         this.currentOperand = (this.currentOperand / 100).toString()
-        
+
     }
 
     squareRoot() {
-        if (this.currentOperand == NaN) return 
         this.currentOperand = Math.sqrt(this.currentOperand)
-        
+
     }
 
     squared() {
-        if (this.currentOperand === NaN) return
         this.currentOperand = Math.pow(this.currentOperand, 2)
     }
 
     fraction() {
-        this.currentOperand = (1/this.currentOperand).toString()
+        this.currentOperand = (1 / this.currentOperand).toString()
+    }
+
+    calculateFactorial() {
+        let num = this.currentOperand
+        if (num == 0 || num == 1) {
+            return 1
+        } else {
+            let rval = 1;
+            for (var i = 2; i <= num; i++)
+                rval = rval * i;
+            return rval;
+        }
+
+    }
+
+    factorial() {
+       this.currentOperand = this.calculateFactorial(this.currentOperand)
     }
 
     reverseSign() {
         if (this.currentOperand < 0) {
-            this.currentOperand = Math.abs(this.currentOperand) 
+            this.currentOperand = Math.abs(this.currentOperand)
         } else {
             this.currentOperand = Math.abs(this.currentOperand) * -1
         }
@@ -130,6 +144,7 @@ const percentageButton = document.querySelector('[data-percentage]')
 const squareRootButton = document.querySelector('[data-square-root]')
 const squaredButton = document.querySelector('[data-squared]')
 const fractionButton = document.querySelector('[data-fraction]')
+const factorialButton = document.querySelector('[data-factorial]')
 const reverseSignButton = document.querySelector('[data-reverse-sign]')
 
 const previousOperandTextElement = document.querySelector('[data-previous-operand]')
@@ -195,7 +210,12 @@ fractionButton.addEventListener('click', button => {
     calculator.updateDisplay()
 })
 
-reverseSignButton.addEventListener('click',button => {
+factorialButton.addEventListener('click', button => {
+    calculator.factorial()
+    calculator.updateDisplay()
+})
+
+reverseSignButton.addEventListener('click', button => {
     calculator.reverseSign()
     calculator.updateDisplay()
 })
