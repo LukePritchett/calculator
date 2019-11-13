@@ -13,15 +13,18 @@ class Calculator {
 
     squareRoot() {
         this.currentOperand = Math.sqrt(this.currentOperand)
+        this.readyToReset = true
 
     }
 
     squared() {
         this.currentOperand = Math.pow(this.currentOperand, 2)
+        this.readyToReset = true
     }
 
     fraction() {
         this.currentOperand = (1 / this.currentOperand).toString()
+        this.readyToReset = true
     }
 
     calculateFactorial() {
@@ -39,6 +42,7 @@ class Calculator {
 
     factorial() {
        this.currentOperand = this.calculateFactorial(this.currentOperand)
+       this.readyToReset = true
     }
 
     reverseSign() {
